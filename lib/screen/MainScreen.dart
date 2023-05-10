@@ -3,6 +3,7 @@ import 'package:e_commerce/screen/Cart.dart';
 import 'package:e_commerce/screen/Post.dart';
 import 'package:e_commerce/screen/Profil.dart';
 import 'package:e_commerce/screen/ajouterproduit.dart';
+import 'package:e_commerce/screen/chatScreenHome.dart';
 
 import 'package:e_commerce/screen/homescreen.dart';
 import 'package:e_commerce/screen/postt.dart';
@@ -26,6 +27,7 @@ class mainScreen extends StatelessWidget {
         homeScreen(),
         ajouterProduit(),
         postSCreen(),
+        chatScreenHome(),
         ProfilScreen(),
       ];
     }
@@ -57,7 +59,14 @@ class mainScreen extends StatelessWidget {
         PersistentBottomNavBarItem(
           iconSize: 28,
           icon: Icon(Icons.person),
-          title: ("ajouter boutique"),
+          title: ("ajouter"),
+          activeColorPrimary: primaryColor,
+          inactiveColorPrimary: Colors.grey,
+        ),
+        PersistentBottomNavBarItem(
+          iconSize: 28,
+          icon: Icon(Icons.message),
+          title: ("chat"),
           activeColorPrimary: primaryColor,
           inactiveColorPrimary: Colors.grey,
         ),

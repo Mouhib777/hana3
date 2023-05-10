@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce/constance.dart';
+import 'package:e_commerce/screen/chatScreen.dart';
 import 'package:e_commerce/services/vendeurService.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -174,6 +175,22 @@ class _produit_vendeurState extends State<produit_vendeur> {
                           }).toList()),
                     ),
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => chatScreen(
+                                id: widget.uid,
+                                name: widget.name,
+                                number: widget.number,
+                              ),
+                            ));
+                      },
+                      child: Text('contacter cette boutique'))
                 ],
               );
             },
